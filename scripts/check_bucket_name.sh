@@ -6,6 +6,8 @@ set -e
 ### https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
 
 function checkBucket() {
+  echo "::info::Bucket name: $1"
+
   # check length of bucket name
   if [[ ${#1} -lt 3 || ${#1} -gt 63 ]]; then
     echo "::error::Bucket name must be between 3 and 63 characters long."
